@@ -29,3 +29,10 @@
 @import "animations";
 @import "layout";
 @import "pygments";
+
+/* In news emphasize links */
+
+#index_excerpt a { border-bottom:1px dotted; }
+
+#index_excerpt a:hover { border-bottom:1px solid; }
+

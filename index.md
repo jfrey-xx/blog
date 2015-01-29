@@ -1,8 +1,14 @@
 ---
 layout: archive
 permalink: /
-title: "Latest Posts"
 ---
+
+<div class="index_excerpt">
+Optional opening sentence.
+</div>
+
+
+## Latest Posts
 
 <div class="tiles">
 {% for post in site.posts %}
