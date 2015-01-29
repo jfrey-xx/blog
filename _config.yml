@@ -1,11 +1,11 @@
 # Site wide configuration
 
-title:
-description:
+title: Stuff
+description: Writings that could possibly be worth reading.
 logo: # 120x120 px default image used for Twitter summary card
 teaser: # 400x250 px default teaser image used in image archive grid
 locale:
-url:
+url: http://blog.jfrey.info
 
 # Jekyll configuration
 
@@ -21,9 +21,9 @@ gems:
 
 # Site owner
 owner:
-  name:
-  email:
-  twitter:
+  name: Jérémy Frey
+  email: 
+  twitter: jfrey_xx
   google:
     ad-client: 
     ad-slot: 
