@@ -18,6 +18,13 @@ highlighter: pygments
 gems:
   - jekyll-sitemap
 
+# default options
+defaults:
+  -
+    scope:
+      type: posts
+    values:
+      layout: article.html
 
 # Site owner
 owner:
