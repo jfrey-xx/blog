@@ -12,7 +12,7 @@ url: http://blog.jfrey.info
 sass:
     sass_dir: _sass
     style: compressed
-permalink: /:categories/:title/
+permalink: pretty
 markdown: kramdown
 highlighter: pygments
 gems:
@@ -20,6 +20,9 @@ gems:
 
 # default options
 defaults:
+  -
+    values:
+      toc: false
   -
     scope:
       type: posts
