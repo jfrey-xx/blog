@@ -24,7 +24,7 @@ defaults:
     scope:
       type: posts
     values:
-      layout: article.html
+      layout: article
 
 # Site owner
 owner:
