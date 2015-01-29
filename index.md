@@ -3,7 +3,11 @@ layout: archive
 permalink: /
 ---
 
-*Beside my [research activities](http://phd.jfrey.info/) I may have some pieces of writing that may be worth reading. Or not, I let you judge.*
+<div class="index_excerpt">
+
+<em>Beside my <a href="http://phd.jfrey.info">research activities</a> I may have some pieces of writing that may be worth reading. Or not, I let you judge.</em>
+
+</div>
 
 ## Latest posts
 
