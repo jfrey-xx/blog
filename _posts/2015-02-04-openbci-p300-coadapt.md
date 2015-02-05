@@ -66,9 +66,9 @@ CoAdaptP300_Channels=Fz;C3;Cz;C4;P7;P3;Pz;P4;P8;O1;Oz;O2
 
 to
 
-~~~ ini
+```ini
 CoAdaptP300_Channels=C3;Cz;C4;P3;Pz;P4;O1;O2
-~~~
+```
 
 We may have performances slightly less important than the average with 8 channels. We are venturing into new territories in here!
 
