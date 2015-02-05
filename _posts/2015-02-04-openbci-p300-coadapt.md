@@ -1,6 +1,6 @@
 ---
 title: "Using OpenBCI with OpenViBE CoAdapt P300 Speller"
-excerpt: "Learn how to use a P300 speller"
+excerpt: "Learn how to use a P300 speller, i.e. typing words using solely your brain activity."
 image:
   teaser: "openbci_p300_coadapt/teaser.jpg"
   feature: "openbci_p300_coadapt/feature.jpg"
@@ -185,7 +185,7 @@ You can also try to run the "copy mode" to see how the system behave in a contro
 
 ### Use-case
 
-You've patiently followed the instructions, you've struggled with the hardware, the software and the textware and finally, this is it, you will use the **POWER OF YOUR MIND**[^3] to spell thought loud letters, words, sentences and, if you have a big fat battery pack attached to your board, novels.
+You've patiently followed the instructions, you've struggled with the hardware, the software and the textware and finally, this is it, you will use the **POWER OF YOUR MIND** [^3] to spell thought loud letters, words, sentences and, if you have a big fat battery pack attached to your board, novels.
 
 [^3]: Too bad, HTML blink tag is depreciated.
 
