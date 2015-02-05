@@ -3,6 +3,7 @@ title: "Using OpenBCI with OpenViBE CoAdapt P300 Speller"
 image:
   teaser: "openbci_p300_coadapt/teaser.jpg"
   feature: "openbci_p300_coadapt/feature.jpg"
+toc: true
 ---
 
 One application used as a flagship among brain-computer interfaces is the "P300 speller". It relies on a specific kind of brain signal, an event-relate potential that appears when rare stimuli occur[^1], and that -- in this case -- is used to recognize which letters one want to spell, *relying only on brain activity*. It is a slow process but it is working -- mainly. Besides the "wow" effect -- that won't last long -- this kind of tool could help people with severe loss of motor function.
