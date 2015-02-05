@@ -226,7 +226,7 @@ Nothing would be possible without the great work done by the researchers and dev
 
 [^4]: Can I have my free kit now?
 
-There's many more applications waiting to rocket your EEG within OpenViBE, and many *many* more if you learn how to create new scenarios -- it's a graphical language, it's ~~messy~~ easy to get your teeth into neurofeedback.
+There's many more applications waiting to rocket your EEG within OpenViBE, and many *many* more if you learn how to create new scenarios -- it's a graphical language, it's <s>messy</s> easy to get your teeth into neurofeedback.
 
 Please contribute to those different projects, and to this very tutorial if you see any mistake[^5] or if I'm not clear in my explanations.
 
