@@ -5,7 +5,9 @@ image:
   feature: "openbci_p300_coadapt/feature.jpg"
 ---
 
-One application used as a flagship among brain-computer interfaces is the "P300 speller". It relies on a specific kind of brain signal, an event-relate potential that appears when rare stimuli occur[^*very* short summary], and that -- in this case -- is used to recognize which letters one want to spell, *relying only on brain activity*. It is a slow process but it is working -- mainly. Besides the "wow" effect -- that won't last long -- this kind of tool could help people with severe loss of motor function.
+One application used as a flagship among brain-computer interfaces is the "P300 speller". It relies on a specific kind of brain signal, an event-relate potential that appears when rare stimuli occur[^1], and that -- in this case -- is used to recognize which letters one want to spell, *relying only on brain activity*. It is a slow process but it is working -- mainly. Besides the "wow" effect -- that won't last long -- this kind of tool could help people with severe loss of motor function.
+
+[^1]: *Very* short summary.
 
 To make a P300 speller work we have 2 roads. The easy one -- just open sequentially the `p300-xdawn-*` scenarios that come with OpenViBE -- and the hard one, which necessitates more steps before you could jump in, but which also leads to a way more accurate application. We are warriors, we take the long journey, aiming at the "CoAdapt P300 Speller".
 
@@ -136,7 +138,9 @@ OK, *now* we will start to do some P300.
 
 - launch OpenViBE designer, load `p300-coadapt-online-with-monitoring.xml` and run the scenario. This version will give you some feedback about what's going on.
 - launch `dist/openvibe-coadapt-p300-stimulator.sh`. When you are ready to proceed, press the `s` key on the keyboard. Watch for the letters until the session ends.
-	- **Warning**: this soft expects a QWERTY -- or AZERTY? -- keyboard, if you have a "fancy" keyboard layout[^I'm a bépo believer myself] you will have to locate which key "should" be the `s`. I have yet to digg into this, but the scripts underneath must use directly scancodes (duh!).
+	- **Warning**: this soft expects a QWERTY -- or AZERTY? -- keyboard, if you have a "fancy" keyboard layout[^2] you will have to locate which key "should" be the `s`. I have yet to digg into this, but the scripts underneath must use directly scancodes (duh!).
+
+[^2]: I'm a bépo believer myself.
 
 Once the sentence is complete press `ESC` to terminate the P300 speller interface. The scenario inside OpenViBE should also have stopped by itself.
 
@@ -179,7 +183,9 @@ You can also try to run the "copy mode" to see how the system behave in a contro
 
 ## Use-case
 
-You've patiently followed the instructions, you've struggled with the hardware, the software and the textware and finally, this is it, you will use the **POWER OF YOUR MIND**[^Too bad, HTML blink tag is depreciated] to spell thought loud letters, words, sentences and, if you have a big fat battery pack attached to your board, novels.
+You've patiently followed the instructions, you've struggled with the hardware, the software and the textware and finally, this is it, you will use the **POWER OF YOUR MIND**[^3] to spell thought loud letters, words, sentences and, if you have a big fat battery pack attached to your board, novels.
+
+[^3]Too bad, HTML blink tag is depreciated.
 
 You are three steps away from this ultimate goal. Switch the mode:
 
@@ -213,10 +219,14 @@ This is it, hopefully you are spelling words using your EEG activity!
 
 I hope this little piece of information helped you to grasp one of the possible uses of the OpenBCI board. Please refer to the [original documentation of the CoAdapt P300 Speller](http://openvibe.inria.fr/coadapt-p300-stimulator-tutorial/) for more advanced features -- e.g., word prediction -- that could drastically improve your "typing."
 
-Nothing would be possible without the great work done by the researchers and developers behind OpenViBE and the CoAdapt P300 Speller -- not only code, but also documentation. While I mingle from time to time with some of these people, I'm not *one* of them, not even a P300 expert (far from it!), just a regular user of OpenViBE, hacking for my own agenda. The same goes with OpenBCI, a shout-out for the team that made accessible a cheap, versatile and reliable EEG device[^Can I have my free kit now?]. It won't replace medical grade devices, but it's a good start for hackers out there.
+Nothing would be possible without the great work done by the researchers and developers behind OpenViBE and the CoAdapt P300 Speller -- not only code, but also documentation. While I mingle from time to time with some of these people, I'm not *one* of them, not even a P300 expert (far from it!), just a regular user of OpenViBE, hacking for my own agenda. The same goes with OpenBCI, a shout-out for the team that made accessible a cheap, versatile and reliable EEG device[^4]. It won't replace medical grade devices, but it's a good start for hackers out there.
+
+[^4]: Can I have my free kit now?
 
 There's many more applications waiting to rocket your EEG within OpenViBE, and many *many* more if you learn how to create new scenarios -- it's a graphical language, it's ~~messy~~ easy to get your teeth into neurofeedback.
 
-Please contribute to those different projects, and to this very tutorial if you see any mistake[^Target conceptual and factual errors first, before shooting at the language] or if I'm not clear in my explanations.
+Please contribute to those different projects, and to this very tutorial if you see any mistake[^5] or if I'm not clear in my explanations.
+
+[^5]: Target conceptual and factual errors first, before shooting at the language.
 
 ![Live session](openbci_p300_coadapt/live.jpg "During this session I started to spell 'H3LLO', there's a l33t in my brain! Bonus: will you be able to find Teegi, resting peacefully in the lab?")
