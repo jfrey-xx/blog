@@ -14,8 +14,6 @@ sass:
     style: compressed
 permalink: pretty
 markdown: kramdown
-kramdown:
-    input: GFM
 highlighter: pygments
 gems:
   - jekyll-sitemap
