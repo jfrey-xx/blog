@@ -36,7 +36,7 @@ We will use the international 10-20 system to localize our electrodes, targeting
 
 There's different possible configurations for the ground and reference electrodes. We will choose to put them respectively on the forehead and on the right earlobe. We assume that the ground is the black wire, connect it to the `BIAS` pin on the OpenBCI board. The ref electrode (white wire) will go to `SRB`. Check the [OpenBCI documentation](http://docs.openbci.com/tutorials/01-GettingStarted) for more details and other examples.
 
-![P300 electrodes](openbci_p300_coadapt/channels_P300.png)
+![P300 electrodes](/images/openbci_p300_coadapt/channels_P300.png)
 
 # Configuration
 
@@ -44,13 +44,13 @@ There's different possible configurations for the ground and reference electrode
 
 Once you made sure that the OpenViBE acquisition server is correctly configured to receive data from the python script -- default port `12345`, `Big endian` and `32 bits float` -- you will have to set these locations. Click on `Driver Properties` and then on `Change channel names`. Put in the right column the locations previously mentioned.
 
-![Configure OpenViBE acquisition server, driver](openbci_p300_coadapt/ov-server-1.png)
+![Configure OpenViBE acquisition server, driver](/images/openbci_p300_coadapt/ov-server-1.png)
 
 NB: Even if you want to use fewer electrodes, leave the number of channels at "8" because within the python script all signals are sent, no matter how many are truly useful.
 
 Since you are here, also make sure to enable `EnableExternalStimulations` in the `Preferences` of the main dialog and set a `10` ms drift tolerance instead 2 -- one or two samples will easily arrive late or early on occasion with the current tools.
 
-![Configure OpenViBE acquisition server, preferences](openbci_p300_coadapt/ov-server-2.png)
+![Configure OpenViBE acquisition server, preferences](/images/openbci_p300_coadapt/ov-server-2.png)
 
 ## P300 CoAdapt scenario
 
@@ -146,7 +146,7 @@ Once the sentence is complete press `ESC` to terminate the P300 speller interfac
 
 We have to *close* the OpenViBE designer for the changes that we will make in next section to be taken into account -- basically each time you modify `P300AcquisitionConfig.conf` you will have to restart OpenViBE designer.
 
-![Calibration](openbci_p300_coadapt/calibration.png "Slow start for my ERPs.")
+![Calibration](/images/openbci_p300_coadapt/calibration.png "Slow start for my ERPs.")
 
 ## Signal processing
 
@@ -167,7 +167,7 @@ Now we rest and wait for the CPU to heat the room while it tries to discriminate
 - launch OpenViBE design (again), load and run `p300-coadapt-train-xdawn.xml`. Use the "fast forward" button instead of the regular "play" to speed up the process. Once finished you should see in the output a message saying `xDAWN Spatial filter trained successfully`
 - same goes for `p300-coadapt-train-classifier.xml`, with a rough approximation of classifier performance in the output
 
-![Fast forward in OpenViBE](openbci_p300_coadapt/fast_forward.png)
+![Fast forward in OpenViBE](/images/openbci_p300_coadapt/fast_forward.png)
 
 ## Verification
 
@@ -175,7 +175,7 @@ You could have a first insight of how the system performed in discriminating you
 
 Another and more reliable way to sense if your P300 signal is in "good shape" is to run the `p300-coadapt-replay.xml` scenario. It'll plot the averaged ERP (event-related potentials) between target and non-target letters. You should expect a "peak" at about t=300ms (hence the name) in the green curve associated to target letters. It is the main component of the P300; there are others (both negative and positive). The timing and amplitude vary depending on many conditions (alertness, nature of the stimuli, etc.). Don't worry if the shapes of *your* signals are different, there's nothing wrong with your brain, it's likely that the signal processing "distorted" the plot, or that it just displaying noise.
 
-![Verification phase](openbci_p300_coadapt/verification.png "P300 of one tired brain")
+![Verification phase](/images/openbci_p300_coadapt/verification.png "P300 of one tired brain")
 
 If you do not obtain a good classification or if you do not see a clear distinction between both curves, check wires, electrodes' positions, make sure there is not too much noise in EEG signals -- you have impedance check into OpenBCI GUI -- increase the number of letters and repetitions and re-do the calibration.
 
@@ -213,7 +213,7 @@ At last, launch the whole pipeline as during calibration:
 
 This is it, hopefully you are spelling words using your EEG activity!
 
-![Copy mode](openbci_p300_coadapt/copy_mode.png "Real demo in 'copy' mode to check for accuracy")
+![Copy mode](/images/openbci_p300_coadapt/copy_mode.png "Real demo in 'copy' mode to check for accuracy")
 
 # Beyond
 
@@ -229,4 +229,4 @@ Please contribute to those different projects, and to this very tutorial if you 
 
 [^5]: Target conceptual and factual errors first, before shooting at the language.
 
-![Live session](openbci_p300_coadapt/live.jpg "During this session I started to spell 'H3LLO', there's a l33t in my brain! Bonus: will you be able to find Teegi, resting peacefully in the lab?")
+![Live session](/images/openbci_p300_coadapt/live.jpg "During this session I started to spell 'H3LLO', there's a l33t in my brain! Bonus: will you be able to find Teegi, resting peacefully in the lab?")
