@@ -14,17 +14,17 @@ To make a P300 speller work we have 2 roads. The easy one -- just open sequentia
 
 This documentation is loosely based on [http://openvibe.inria.fr/coadapt-p300-stimulator-tutorial/](http://openvibe.inria.fr/coadapt-p300-stimulator-tutorial/). It takes for granted that you already have a working installation of OpenViBE and that you manage to stream data from OpenBCI to OpenViBE -- see [here](http://openvibe.inria.fr/downloads/) and [here](https://github.com/jfrey-xx/OpenBCI_Python/blob/openvibelink/README.md) for details. All in all there's nothing fancy in here, just trying to document thoroughly one particular setup. You may want to understand [how OpenViBE works](http://openvibe.inria.fr/bci-and-openvibe-introduction-video/) and what a [P300 speller](https://duckduckgo.com/?q=P300+speller) is about before you proceed.
 
-# Requirements
+## Requirements
 
-## Hardware
+### Hardware
 
 - A shiny [OpenBCI board](http://www.openbci.com/), tested with 8 channels / chipKIT version and the same gold cup electrodes that come with the R&D kit
 
-## Operating system
+### Operating system
 
 While the present guide should work on Windows, it's with Linux that we will play at the moment. Tested on Ubuntu 14.04.
 
-## Software
+### Software
 
 - [OpenViBE](http://openvibe.inria.fr/), tested with version 0.18
 - OpenBCI Python with some [custom modifications](https://github.com/jfrey-xx/OpenBCI_Processing/tree/openvibelink)
@@ -39,9 +39,9 @@ There's different possible configurations for the ground and reference electrode
 
 ![P300 electrodes](/images/openbci_p300_coadapt/channels_P300.png)
 
-# Configuration
+## Configuration
 
-## OpenViBE acquisition server
+### OpenViBE acquisition server
 
 Once you made sure that the OpenViBE acquisition server is correctly configured to receive data from the python script -- default port `12345`, `Big endian` and `32 bits float` -- you will have to set these locations. Click on `Driver Properties` and then on `Change channel names`. Put in the right column the locations previously mentioned.
 
@@ -53,7 +53,7 @@ Since you are here, also make sure to enable `EnableExternalStimulations` in the
 
 ![Configure OpenViBE acquisition server, preferences](/images/openbci_p300_coadapt/ov-server-2.png)
 
-## P300 CoAdapt scenario
+### P300 CoAdapt scenario
 
 Now we need to mirror the electrodes positions into the P300 CoAdapt configuration file, which is in `dist/share/openvibe/applications/CoAdaptP300Stimulator/P300AcquisitionConfig.conf`, relative to your OpenViBE installation folder.
 
@@ -87,7 +87,7 @@ I give you that much details in case you want to try a different number of elect
 
 Breath out, it was probably the most complicated part of this tutorial -- human beings should not lay eyes on such files and it was a BIG copy-paste. If you managed to do that, the rest will come easy.
 
-### Optional: fullscreen mode
+#### Optional: fullscreen mode
 
 By default, the letters grid will appear in windowed mode, to switch to fullscreen edit `dist/share/openvibe/applications/externalP300Stimulator/interface-properties.xml`, locate the following piece of XML:
 
@@ -96,7 +96,7 @@ By default, the letters grid will appear in windowed mode, to switch to fullscre
 ~~~
 ...and replace `nofull` by `full`. You may be less distracted by adjacent letters when they flash -- hence better results -- if you maximize the size of the window.
 
-# Step-by-step guide
+## Step-by-step guide
 
 The various scenario files are located in `share/openvibe/scenarios/bci-examples/p300-coadapt-stimulator/`. Once switched on your OpenBCI board, started the python script and launched the OpenViBE acquisition server + checked that you could feed EEG signal to OpenViBE with the `displaySignal.xml`, we will get to work. This P300 application consists in 3 steps:
 
@@ -105,7 +105,7 @@ The various scenario files are located in `share/openvibe/scenarios/bci-examples
 3. Verification. We will visually inspect the signals and have a look at classifier's performances to assess whether or not the training went well.
 4. Use-case, that you could summarize as "let's have some fun".
 
-## Setting letters straight
+### Setting letters straight
 
 OK, I lied, I didn't want to scare you beforehand, there's a *fifth* step before the 4 in order to tune further the configuration of the P300 speller. This time it's not related to electrodes but to how letters flash -- and which ones. You may try different parameters. In `dist/share/openvibe/applications/CoAdaptP300Stimulator/P300AcquisitionConfig.conf` still, edit
 
@@ -133,7 +133,7 @@ CoAdaptP300_WordToSpell=PACK MY BOX WITH FIVE DOZEN LIQUOR JUGS
 
 Once again, the more letters and repetitions are configured and the more reliable the speller will be. One tedious moment. That you will probably need to repeat each time you put the electrodes on, I know, no need to ruin the fun right from the beginning!
 
-## Calibration
+### Calibration
 
 OK, *now* we will start to do some P300.
 
@@ -149,7 +149,7 @@ We have to *close* the OpenViBE designer for the changes that we will make in ne
 
 ![Calibration](/images/openbci_p300_coadapt/calibration.png "Slow start for my ERPs.")
 
-## Signal processing
+### Signal processing
 
 The data recorded during the calibration have been saved in a `.ov` files located in a subfolder of the scenario's folder: `dist/share/openvibe/scenarios/bci-examples/p300-coadapt-stimulator/signals`. There is a timestamp associated to each run so you do not overwrite data and the name is prefixed with information about the subject; since we don't have any, we deal with Mr. (or Ms.) "X" here. Spot the last entry -- the EEG signals you just recorded -- for example `x1--_2015.01.29_16.13.52.ov`.
 
@@ -170,7 +170,7 @@ Now we rest and wait for the CPU to heat the room while it tries to discriminate
 
 ![Fast forward in OpenViBE](/images/openbci_p300_coadapt/fast_forward.png)
 
-## Verification
+### Verification
 
 You could have a first insight of how the system performed in discriminating your EEG signals (target letter *vs* non-target letter) by looking at the output of the designer after you ran the classifier, as mentioned above. If you see something alike `Training set accuracy is 54.1667% (optimistic)`, well, it's not a good start. Chance is 50%, a perfect system would score 100%, I let you do the maths. On the other hand, if the classifier report more than 80% accuracy, there's some hope. Because the classification results in OpenViBE is kind of broken at the moment -- e.g., there's a bias with the target/non-target ratio -- you should really target 90% and higher.
 
@@ -182,7 +182,7 @@ If you do not obtain a good classification or if you do not see a clear distinct
 
 You can also try to run the "copy mode" to see how the system behave in a controlled situation, see the [complete documentation](http://openvibe.inria.fr/coadapt-p300-stimulator-tutorial/) -- do not forget to revert back the changes made to the configuration file if you do so.
 
-## Use-case
+### Use-case
 
 You've patiently followed the instructions, you've struggled with the hardware, the software and the textware and finally, this is it, you will use the **POWER OF YOUR MIND**[^3] to spell thought loud letters, words, sentences and, if you have a big fat battery pack attached to your board, novels.
 
@@ -216,7 +216,7 @@ This is it, hopefully you are spelling words using your EEG activity!
 
 ![Copy mode](/images/openbci_p300_coadapt/copy_mode.png "Real demo in 'copy' mode to check for accuracy")
 
-# Beyond
+## Beyond
 
 I hope this little piece of information helped you to grasp one of the possible uses of the OpenBCI board. Please refer to the [original documentation of the CoAdapt P300 Speller](http://openvibe.inria.fr/coadapt-p300-stimulator-tutorial/) for more advanced features -- e.g., word prediction -- that could drastically improve your "typing."
 
