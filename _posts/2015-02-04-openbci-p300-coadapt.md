@@ -60,9 +60,9 @@ Now we need to mirror the electrodes positions into the P300 CoAdapt configurati
 
 Change
 
-~~~ ini
+{% highlight ini %}
 CoAdaptP300_Channels=Fz;C3;Cz;C4;P7;P3;Pz;P4;P8;O1;Oz;O2
-~~~
+{% endhighlight %}
 
 to
 
