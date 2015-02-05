@@ -1,6 +1,6 @@
 ---
 title: "Using OpenBCI with OpenViBE CoAdapt P300 Speller"
-excerpt: "Learn how to use a P300 speller, i.e. 'typing' words using solely your brain activity."
+excerpt: "Learn how to use a P300 speller"
 image:
   teaser: "openbci_p300_coadapt/teaser.jpg"
   feature: "openbci_p300_coadapt/feature.jpg"
