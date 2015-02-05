@@ -66,9 +66,9 @@ CoAdaptP300_Channels=Fz;C3;Cz;C4;P7;P3;Pz;P4;P8;O1;Oz;O2
 
 to
 
-```ini
+{% highlight ini %}
 CoAdaptP300_Channels=C3;Cz;C4;P3;Pz;P4;O1;O2
-```
+{% endhighlight %}
 
 We may have performances slightly less important than the average with 8 channels. We are venturing into new territories in here!
 
@@ -78,13 +78,13 @@ There are random values for the coefficients by default in the first `<SettingVa
 
 I give you that much details in case you want to try a different number of electrodes, or different parameters, see also the [corresponding help page](http://openvibe.inria.fr/documentation/0.18.0/Doc_BoxAlgorithm_XDAWNSpatialFilterTrainer.html). Or you could just put that in the `p300-spatial-filter.cfg`:
 
-~~~ xml
+{% highlight xml %}
 <OpenViBE-SettingsOverride>
   <SettingValue>1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1</SettingValue>
   <SettingValue>3</SettingValue>
   <SettingValue>8</SettingValue>
 </OpenViBE-SettingsOverride>
-~~~
+{% endhighlight %}
 
 Breath out, it was probably the most complicated part of this tutorial -- human beings should not lay eyes on such files and it was a BIG copy-paste. If you managed to do that, the rest will come easy.
 
@@ -92,9 +92,10 @@ Breath out, it was probably the most complicated part of this tutorial -- human 
 
 By default, the letters grid will appear in windowed mode, to switch to fullscreen edit `dist/share/openvibe/applications/externalP300Stimulator/interface-properties.xml`, locate the following piece of XML:
 
-~~~ xml
+{% highlight xml %}
 <Screen index="${CoAdaptP300_MonitorIndex}" width="${CoAdaptP300_MonitorWidth}" height="${CoAdaptP300_MonitorHeight}">nofull</Screen>
-~~~
+{% endhighlight %}
+
 ...and replace `nofull` by `full`. You may be less distracted by adjacent letters when they flash -- hence better results -- if you maximize the size of the window.
 
 ## Step-by-step guide
@@ -110,27 +111,27 @@ The various scenario files are located in `share/openvibe/scenarios/bci-examples
 
 OK, I lied, I didn't want to scare you beforehand, there's a *fifth* step before the 4 in order to tune further the configuration of the P300 speller. This time it's not related to electrodes but to how letters flash -- and which ones. You may try different parameters. In `dist/share/openvibe/applications/CoAdaptP300Stimulator/P300AcquisitionConfig.conf` still, edit
 
-~~~ inf
+{% highlight ini %}
 CoAdaptP300_NrOfRepetitions=5
-~~~
+{% endhighlight %}
 
 into
 
-~~~ inf
+{% highlight ini %}
 CoAdaptP300_NrOfRepetitions=15
-~~~
+{% endhighlight %}
 
 The calibration will take longer, but as a first try it's good not to oversee this step. The accuracy of the whole system is greatly impacted by the calibration. Also change the word that you will carefully focus on, from the short
 
-~~~ inf
+{% highlight ini %}
 CoAdaptP300_WordToSpell=TARGET
-~~~
+{% endhighlight %}
 
 to a classic pangram
 
-~~~ inf
+{% highlight ini %}
 CoAdaptP300_WordToSpell=PACK MY BOX WITH FIVE DOZEN LIQUOR JUGS
-~~~
+{% endhighlight %}
 
 Once again, the more letters and repetitions are configured and the more reliable the speller will be. One tedious moment. That you will probably need to repeat each time you put the electrodes on, I know, no need to ruin the fun right from the beginning!
 
@@ -156,13 +157,13 @@ The data recorded during the calibration have been saved in a `.ov` files locate
 
 Copy this filename to the right place -- in `P300AcquisitionConfig.conf`, you guessed right -- along with the folder location, e.g.,
 
-~~~ inf
+{% highlight ini %}
 CoAdaptP300_TrainFile=PLEASE_REMEMBER_TO_MODIFY_P300AcquisitionConfig.conf
-~~~
+{% endhighlight %}
 
-~~~ inf
+{% highlight ini %}
 CoAdaptP300_TrainFile=${Player_ScenarioDirectory}/signals/x1--_2015.01.29_16.13.52.ov
-~~~
+{% endhighlight %}
 
 Now we rest and wait for the CPU to heat the room while it tries to discriminate spatially and temporally our EEG signals.
 
@@ -191,19 +192,19 @@ You've patiently followed the instructions, you've struggled with the hardware, 
 
 You are three steps away from this ultimate goal. Switch the mode:
 
-~~~ inf
+{% highlight ini %}
 CoAdaptP300_AcquisitionMode=Cal
-~~~
+{% endhighlight %}
 
-~~~ inf
+{% highlight ini %}
 CoAdaptP300_AcquisitionMode=Fr
-~~~
+{% endhighlight %}
 
 Reset the sentence used during calibration
 
-~~~ inf
+{% highlight ini %}
 CoAdaptP300_WordToSpell=
-~~~
+{% endhighlight %}
 
 You can also set `CoAdaptP300_EarlyStopping=True` to skip some flashes once the system is reasonably sure of your targets. During my attempts, being somewhat tired by that much work, I needed between 5 and 10 flashes to select a letter. If your are focused you should do better.
 
