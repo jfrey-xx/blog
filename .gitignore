@@ -6,3 +6,7 @@ codekit-config.json
 node_modules
 _asset_bundler_cache
 .sass-cache
+
+# linux leftovers
+.directory
+*.swp
