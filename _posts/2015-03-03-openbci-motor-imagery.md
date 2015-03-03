@@ -7,7 +7,7 @@ image:
 toc: true
 ---
 
-Last time we saw how to use OpenBCI to spell [clever words](2015-02-04-openbci-p300-coadapt.md), today we will learn the principle behind another well documented application of BCI: motor imagery.
+Last time we saw how to use OpenBCI to spell [clever words](/2015/02/04/openbci-p300-coadapt/), today we will learn the principle behind another well documented application of BCI: motor imagery.
 
 The goal is to trigger events, usually to move "things", by using the brain activity that relates to hands and feet. "Hold on!", you may say, "I've already seen cool stuff moving thanks to OpenBCI in [other places](http://eeghacker.blogspot.fr/2014/06/controlling-hex-bug-with-my-brain-waves.html) of the web, there's nothing new in here." Well, in this case, it is another type of brain activity that is used, dubbed as SSVEP, for steady state visually evoked potential. Basically you focus on a flashing light, the frequency is reflected within some part of your brain, and an EEG analysis could detect that. (With sounds it would be steady-state *auditory* evoked potentials; with touch, *tactile* evoked potentials, you got the idea.) SSVEP is reliable and works for almost everybody with no prior training. SSVEP is great -- and there are several scenarios using them in OpenViBE examples -- but it is more of a reflex toward external stimuli -- blinking lights -- than a voluntary control of your brain activity. It is not exactly what comes up when one think about "mind control"; the key difference between a *reactive* BCI and an *active* BCI. It is like the difference between your leg moving because a tendon around your knee has been smashed with a reflex hammer and your leg moving because you *want* it to.
 
