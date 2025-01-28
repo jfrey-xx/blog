@@ -5,7 +5,7 @@ permalink: /
 
 <div class="index_excerpt">
 
-<em>Beside my <a href="http://phd.jfrey.info">research activities</a> I may have some pieces of writing that could be worth reading. Or not, I let you decide.</em>
+<em>Beside my <a href="https://phd.jfrey.info">research activities</a> I may have some pieces of writing that could be worth reading. Or not, I let you decide.</em>
 
 </div>
 
